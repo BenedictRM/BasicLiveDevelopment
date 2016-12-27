@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.1/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/styles/tomorrow.min.css">
+  <style>
+  .container ul li {
+      list-style-type: circle;
+      padding-left: 10px;
+      margin-left: 30px;
+  }
+  h2 {
+    border-bottom: solid #ccc 1px;
+  }
+  h3 {
+    font-style: italic;
+  }
+  code {
+    border: 1px #ddd solid;
+  }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo right">Basic Live Development</a>
+      <ul id="nav-mobile" class="left hide-on-med-and-down">
+        <li><a href="/">Home</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container flow-text">
+  <h1 id="basic-live-development-environment">Basic Live Development Environment</h1>
+<p>This is a basic package to develop javascript pages using metalsmith to 
+track and reload pages live as you develop.  Follow these steps to set up your 
+environment.</p>
+<h1 id="requirements">Requirements</h1>
+<ul>
+<li><p>Firebase – setup a firebase account and link it to the build in firebase.json under “firebase”: “your firebase account”
+** This allows you start up a firebase server to your project for local hosting – alternatively you can setup a different server</p>
+</li>
+<li><p>node – install node locally – his project contains the build.js file required to set up the environment</p>
+</li>
+</ul>
+<h1 id="install">Install</h1>
+<pre><code>$ npm install
+</code></pre><h1 id="test-development">Test / Development</h1>
+<h5 id="-key-to-do-the-live-development-you-must-run-each-of-the-following-commands-in-separate-terminals-in-the-following-order-"><strong> Key </strong> – to do the live development you must run each of the following commands in separate terminals in the following order:</h5>
+<h3 id="build-">Build:</h3>
+<h4 id="start-tracking-changes-with-metalsmith-">Start tracking changes with metalsmith:</h4>
+<pre><code>$ node build.js 
+</code></pre><h3 id="serve-">Serve:</h3>
+<h4 id="in-a-second-shell-start-a-firebase-server-you-can-alternatively-use-any-local-server-e-g-python-serve-">In a second shell start a firebase server (you can alternatively use any local server e.g. python serve):</h4>
+<pre><code>$ firebase serve    
+</code></pre><p>The server is default to <code>http://localhost:5000</code> – use your browser to navigate to this port</p>
+<h1 id="deploy-firebase-will-host-your-page">Deploy – firebase will host your page</h1>
+<pre><code>$ firebase deploy
+</code></pre><h1 id="files-to-edit-">Files to Edit:</h1>
+<ul>
+<li>Do not edit files in the build folder – these get auto-generated </li>
+<li>Edit files in src and templates – with materialize you can create .hbs files in templates and materialize will convert to html</li>
+</ul>
+<h2 id="src">src</h2>
+<ul>
+<li>src -&gt; apps : put built out apps here with the file structure for the apps</li>
+<li>To edit the initial landing page edit src -&gt; index.md – metalsmith-markdown will convert to browser readable for you</li>
+</ul>
+<h3 id="-initial-file-system-is-just-a-recommendation-as-to-how-to-separate-concerns">*Initial file system is just a recommendation as to how to separate concerns</h3>
+
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.9.1/highlight.min.js"></script>
+  <script src="http://localhost:35729/livereload.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</body>
+</html>
