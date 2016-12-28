@@ -1,3 +1,7 @@
+---
+layout: layout.hbs
+---
+
 # Basic Live Development Environment
 
 This is a basic package to develop javascript pages using metalsmith to 
@@ -6,7 +10,7 @@ environment.
 
 # Requirements
 * Firebase -- setup a firebase account and link it to the build in firebase.json under "firebase": "your firebase account"
-** This allows you start up a firebase server to your project for local hosting -- alternatively you can setup a different server
+** This allows you start up a firebase server to your project for local hosting ** -- alternatively you can setup a different server
 
 * node -- install node locally -- his project contains the build.js file required to set up the environment
 
@@ -35,8 +39,11 @@ The server is default to `http://localhost:5000` -- use your browser to navigate
 * Do not edit files in the build folder -- these get auto-generated 
 * Edit files in src and templates -- with materialize you can create .hbs files in templates and materialize will convert to html
 
-## src
+## /src/*
 * src -> apps : put built out apps here with the file structure for the apps
 * To edit the initial landing page edit src -> index.md -- metalsmith-markdown will convert to browser readable for you
+
+## Adding New Apps: 
+* be sure to include the line: `<script src="http://localhost:35729/livereload.js"></script>` in the body so that live reload works
 
 ### *Initial file system is just a recommendation as to how to separate concerns
